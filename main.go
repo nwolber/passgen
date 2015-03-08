@@ -18,10 +18,13 @@ const (
 	defaultAlphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPYRSTUVWXYZ1234567890"
 )
 
+var (
+	length, num int
+	alphabet string
+	help bool
+)
+
 func main() {
-	var length, num int
-	var alphabet string
-	var help bool
 
 	flag.IntVar(&length, "l", defaultLength, "length of the generated password")
 	flag.IntVar(&num, "n", defaultCount, "number of passwords generated")

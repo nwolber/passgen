@@ -21,13 +21,13 @@ const (
 func main() {
 	var (
 		length, num int
-		character string
+		characters string
 		help bool
 	)
 
 	flag.IntVar(&length, "l", defaultLength, "length of the generated password")
 	flag.IntVar(&num, "n", defaultCount, "number of passwords generated")
-	flag.StringVar(&character, "a", defaultCharacters, "characters used for generating a password")
+	flag.StringVar(&characters, "a", defaultCharacters, "characters used for generating a password")
 	flag.BoolVar(&help, "h", false, "display this help")
 	flag.Parse()
 
@@ -36,7 +36,7 @@ func main() {
 		return
 	}
 
-	runes := bytes.Runes([]byte(character))
+	runes := bytes.Runes([]byte(characters))
 
 	for i := 0; i < num; i++ {
 		fmt.Println(generatePassword(runes, length))

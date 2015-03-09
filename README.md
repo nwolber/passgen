@@ -1,3 +1,4 @@
+#passgen [![Build Status](https://travis-ci.org/nwolber/passgen.svg)](https://travis-ci.org/nwolber/passgen)
 A simple command-line password generator.
 
 #Install

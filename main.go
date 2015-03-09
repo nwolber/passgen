@@ -21,13 +21,13 @@ const (
 func main() {
 	var (
 		length, num int
-		alphabet string
-		help bool
+		alphabet    string
+		help        bool
 	)
 
 	flag.IntVar(&length, "l", defaultLength, "length of the generated password")
 	flag.IntVar(&num, "n", defaultCount, "number of passwords generated")
-	flag.StringVar(&alphabet, "a", defaultAlphabet, "characters used for generating a password")
+	flag.StringVar(&alphabet, "a", defaultAlphabet, "characters used for generating a password (may contain any valid unicode character)")
 	flag.BoolVar(&help, "h", false, "display this help")
 	flag.Parse()
 

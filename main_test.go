@@ -2,6 +2,8 @@ package main
 
 import (
 	"bytes"
+	"io/ioutil"
+	"os"
 	"strings"
 	"testing"
 )
@@ -22,6 +24,25 @@ func TestGeneratePasswords(t *testing.T) {
 	for _, pw := range got {
 		pw.testAlphabet(t, alphabet)
 		pw.testLength(t, 10)
+	}
+}
+
+func TestPrintPasswords(t *testing.T) {
+	const want = "abc\n123\n"
+
+	p := []password{"abc", "123"}
+
+	old := os.Stdout
+	r, w, _ := os.Pipe()
+	os.Stdout = w
+	printPasswords(p)
+	os.Stdout = old
+	w.Close()
+
+	b, _ := ioutil.ReadAll(r)
+
+	if got := string(b); got != want {
+		t.Errorf("Expected printPasswords to print %s, got: %s", want, got)
 	}
 }
 

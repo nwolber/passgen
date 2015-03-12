@@ -38,7 +38,11 @@ func main() {
 		return
 	}
 
-	for pw := range generatePasswords(alphabet, length, num) {
+	printPasswords(generatePasswords(alphabet, length, num))
+}
+
+func printPasswords(p []password) {
+	for _, pw := range p {
 		fmt.Println(pw)
 	}
 }

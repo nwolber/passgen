@@ -3,7 +3,7 @@ A simple command-line password generator.
 
 #Install
 ```
-go install github.com/nwolber/passgen
+go get github.com/nwolber/passgen
 ```
 
 #Usage
